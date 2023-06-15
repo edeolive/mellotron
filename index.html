@@ -118,21 +118,22 @@
           <section id="conv_overview">
             <h2>Overview</h2>
             <p>For project 3, I wrote a python program that estimates the melody from a sound file and uses that to
-              output a track using sounds from a Mellotron.s
+              output a track using sounds from a Mellotron.
               I chose to emulate Mellotron sounds with this software because of the Mellotron's origins as one of the first samplers.
               Unlike a modern sampler which plays back digital audio samples, the Mellotron played analog audio tapes.
               Essentially, this program is a software sampler that uses samples from an analog sampler.
               <br>
               At first I used a peak finding algorithm to approximate
-              melodies, but found better performance using
-              <a href="https://github.com/spotify/basic-pitch">Spotify's Basic Pitch library</a>.
+              melodies, however my implementation resulted in poor approximations for more complex inputs.
+              I decided to switch to using
+              <a href="https://github.com/spotify/basic-pitch">Spotify's Basic Pitch library</a>, a neural network based library for music transcription.
               In my testing Basic Pitch still has some issues with guessing guitar melody, especially when the signal contains other effects like distortion.
-              It is also very sensitive to noise and, so my sloppy playing really sticks out LOL.
+              It is also very sensitive to noise and, so sloppy playing sticks out (from experience).
               Performance is likely better with something like a piano but I don't have one to test.
-            <p>The program depends on the following python libraries: basic-pitch, pretty_midi, wave, soundfile.
+            <p>The program depends on the following python libraries: tensorflow, numpy, fluidsynth, basic-pitch, pretty_midi, wave, soundfile.
               I didn't have time to write a nice CLI for this program, so usage is simply modifying and running the script:
               <br>
-              <code>python main.py</code>
+              <code>python mel9.py</code>
             </p>
             </p>
           </section>
